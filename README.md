@@ -2,7 +2,7 @@
 
 1) Пункт
 	Создать своё виртуальное окружение с имененм venv
-	python3 -m venv venv
+	python3 -m (venv) venv
 2) Пункт
 	Активировав окружение
 	venv\Scripts\activate
