@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# learn-online-store
 =======
 # learn-online-store
 
@@ -15,4 +13,3 @@
 4) Пункт
 	Установка Django и пакетов внутри проекта:
 	pip install -r requirements.txt
->>>>>>> f635703a5d8d5535f1d0672f65421dc9571a9fef
