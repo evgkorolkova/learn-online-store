@@ -1,3 +1,5 @@
+learn-online-store
+
 1) Пункт
 	Создать своё виртуальное окружение с имененм venv
 	python3 -m venv venv
