@@ -24,7 +24,7 @@ class Writer(models.Model):
 
 class Product(models.Model):
     STATUS_CHOICES = (
-        ("yes": "Enable"),
+        ("yes", "Enable"),
         ("no", "Disable")
         )
     title = models.CharField("Книга", max_length=50)
@@ -35,7 +35,7 @@ class Product(models.Model):
     sku = models.CharField("Артикул", max_length=10, unique=True)
     date_create = models.DateField("Дата создания")
     price = models.DecimalField("Цена", decimal_places=2, max_digits=5, default=0)
-    stock = models.PosiiveIntegerField("Количество на складе", default=1)
+    stock = models.PositiveIntegerField("Количество на складе", default=1)
     status = models.CharField("Статус на сайте", max_length=20, choices=STATUS_CHOICES, default="yes")
     class Meta:
         verbose_name = "Книга"
