@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from datetime import date, datetime
 
 class Category(models.Model):
     title = models.CharField("Категория", max_length=50)
@@ -33,7 +33,7 @@ class Product(models.Model):
     writer = models.ForeignKey(Writer, verbose_name="Автор", related_name="writer_product", on_delete=models.SET_NULL, null=True)
     url = models.SlugField(max_length=200, unique=True)
     sku = models.CharField("Артикул", max_length=10, unique=True)
-    date_create = models.DateField("Дата создания", auto_now_add=True)
+    date_create = models.DateTimeField("Дата создания", auto_now_add=True, null=True)
     price = models.DecimalField("Цена", decimal_places=2, max_digits=5, default=0)
     stock = models.PositiveIntegerField("Количество на складе", default=1)
     status = models.CharField("Статус на сайте", max_length=20, choices=STATUS_CHOICES, default="yes")
