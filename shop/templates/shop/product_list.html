@@ -1,0 +1,16 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+    {% for product in products %}
+        <div class="product">
+            <h1><a href="{% url 'product_detail' pk=product.pk %}">{{ product.title }}</a></h1>
+        </div>
+        <div class="date">
+            <h1> Дата создания {{ product.date_create }} 
+        </div>
+        <div class="price">
+            <h1> Цена {{ product.price }} руб.</h1>
+        </div>
+        </div>
+    {% endfor %}
+{% endblock %}

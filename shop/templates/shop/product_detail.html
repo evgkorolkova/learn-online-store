@@ -1,0 +1,21 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h1><a href="{% url 'product_detail' pk=product.pk %}">{{ product.title }}</a></h1>
+    <div class="product">
+        <div class="category">
+            <h1> Категория : {{ product.category }} </h1>
+        </div>
+        <div class="writer">
+            <h1> Автор : {{ product.writer }} </h1>
+        </div>
+        <div class="description">
+            <h1> Описание : {{ product.description }} </h1>
+        </div>
+        <div class="price">
+            <h1> Цена {{ product.price }} руб.</h1>
+        </div>
+        <div class="stock">
+            <h1> Количество на складе : {{ product.stock }} </h1>
+        </div>
+    </div>
+{% endblock %}
