@@ -8,6 +8,14 @@
     <body>
         <div class="page-header">
             <h1><a href="/">learn-online-store</a></h1>
+            {% if user.is_authenticated %}
+     			<div class="username">
+     				<li>Вы зашли как: {{ user.get_username }}</li>
+     			</div>
+     			<li><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>   
+   			{% else %}
+     			<li><a href="{% url 'login'%}?next={{request.path}}">Войти</a></li>   
+   			{% endif %} 
         </div>
 
         <div class="content container">

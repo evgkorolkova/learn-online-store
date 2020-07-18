@@ -8,7 +8,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(
         User,
-        related_name='profile',
+        related_name='Профиль',
         default=1,
         on_delete=models.PROTECT
     )

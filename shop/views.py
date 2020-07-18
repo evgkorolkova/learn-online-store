@@ -8,6 +8,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 # Create your views here.
 
+
 def product_list(request):
 	products = Product.objects.filter(date_create__lte=timezone.now()).order_by('date_create')
 	return render(request, 'shop/product_list.html', {'products': products})

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Product, Writer, Category
+from .models import Product, Writer, Category, Profile
 
 #admin.site.register(Product)
 #admin.site.register(Writer),
@@ -19,3 +19,5 @@ class WriterAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'url')
+
+admin.site.register(Profile)
