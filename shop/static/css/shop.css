@@ -1,0 +1,37 @@
+.page-header {
+    background-color: #1D76A0;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: Comic Sans, cursive;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+.product {
+    flex-basis: auto !important;
+    width: auto !important;
+    margin: 0 0 20px !important;
+}
+
+. h1 a, .product h1 a:visited {
+    color: #000000;
+}

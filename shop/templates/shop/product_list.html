@@ -5,6 +5,9 @@
         <div class="product">
             <h1><a href="{% url 'product_detail' pk=product.pk %}">{{ product.title }}</a></h1>
         </div>
+        <div class="img">
+            <img src="{{ product.img }}" alt="Изображение книги"/>
+        </div>
         <div class="date">
             <h1> Дата создания {{ product.date_create }} 
         </div>

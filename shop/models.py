@@ -75,29 +75,30 @@ class Writer(models.Model):
         verbose_name_plural = "Авторы"
     
     def __str__(self):
-    	return self.name
+        return self.name
 
 
 class Product(models.Model):
-	STATUS_CHOICES = (
-		("yes", "Enable"),
-        ("no", "Disable") 	
+    STATUS_CHOICES = (
+        ("yes", "Enable"),
+        ("no", "Disable")   
         )
 
-	title = models.CharField("Книга", max_length=50)
-	description = models.TextField("Описание книги", blank=True, null=True)
-	category = models.ManyToManyField(Category, verbose_name="Категория", related_name="category_product")
-	writer = models.ForeignKey(Writer, verbose_name="Автор", related_name="writer_product", on_delete=models.SET_NULL, null=True)
-	url = models.SlugField(max_length=200, unique=True)
-	sku = models.CharField("Артикул", max_length=10, unique=True)
-	date_create = models.DateTimeField("Дата создания", auto_now_add=True, null=True)
-	price = models.DecimalField("Цена", decimal_places=2, max_digits=5, default=0)
-	stock = models.PositiveIntegerField("Количество на складе", default=1)
-	status = models.CharField("Статус на сайте", max_length=20, choices=STATUS_CHOICES, default="yes")
+    title = models.CharField("Книга", max_length=50)
+    description = models.TextField("Описание книги", blank=True, null=True)
+    category = models.ManyToManyField(Category, verbose_name="Категория", related_name="category_product")
+    writer = models.ForeignKey(Writer, verbose_name="Автор", related_name="writer_product", on_delete=models.SET_NULL, null=True)
+    url = models.SlugField(max_length=200, unique=True)
+    sku = models.CharField("Артикул", max_length=10, unique=True)
+    date_create = models.DateTimeField("Дата создания", auto_now_add=True, null=True)
+    price = models.DecimalField("Цена", decimal_places=2, max_digits=5, default=0)
+    stock = models.PositiveIntegerField("Количество на складе", default=1)
+    status = models.CharField("Статус на сайте", max_length=20, choices=STATUS_CHOICES, default="yes")
+    img = models.ImageField(verbose_name="Иозображение книги", upload_to='', null=True, blank=True, default='no_image_given_128_128.jpg')
 
-	class Meta:
-		verbose_name = "Книга"
-		verbose_name_plural = "Книги"
+    class Meta:
+        verbose_name = "Книга"
+        verbose_name_plural = "Книги"
 
-	def __str__(self):
-		return self.title
+    def __str__(self):
+        return self.title
